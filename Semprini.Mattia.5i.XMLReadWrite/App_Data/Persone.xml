@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+  <Persone>
+    <Persona Nome="Simone" Cognome="Fontanella" Indirizzo="Via Verona" Numero="3378976532"/>
+    <Persona Nome="Massimiliano" Cognome="Conti" Indirizzo="Via Napoli" Numero="3358786155"/>
+    <Persona Nome="Thomas" Cognome="Zani" Indirizzo="Via Tripoli" Numero="3663458765"/>
+  </Persone>
+

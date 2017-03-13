@@ -1,0 +1,60 @@
+﻿@using Semprini.Mattia._5i.XMLReadWrite
+@model Persone
+
+
+@{
+    ViewBag.Title = "View";
+    
+}
+@using (Html.BeginForm("NewData", "Default", FormMethod.Post))
+{
+
+   <form action="/Default/NewData/1" method="post">
+        <table class="table" border="1">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().Cognome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().Indirizzo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().Numero)
+                </th>
+
+            </tr>
+
+            @foreach (var item in Model.Persons)
+            {
+
+                <tr>
+                    <td>
+                        @Html.TextBoxFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(modelItem => item.Cognome)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(modelItem => item.Indirizzo)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(modelItem => item.Numero)
+
+                    </td>
+                </tr>
+
+
+            }
+            <tr>
+                <td colspan="4">
+                    <button type="submit">Aggiorna Dati</button>
+                </td>
+            </tr>
+
+        </table>
+        </form>
+}
+
