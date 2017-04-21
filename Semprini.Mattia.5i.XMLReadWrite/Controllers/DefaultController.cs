@@ -32,19 +32,18 @@ namespace Semprini.Mattia._5i.XMLReadWrite.Controllers
 }
 
         [HttpPost]
-        //[ValidateAntiForgeryToken]
-
-        public ActionResult NewData(Persone model)
+        public ActionResult NewData(Persona vm)
         {
+
             string savefile = HostingEnvironment.MapPath(@"~/App_Data/Persone.xml");
-            if (ModelState.IsValid)
-            {
-                model.Save(savefile);
-            }
 
-            
 
-            return View("Index", model);
+            //vm.Save(savefile);
+
+
+
+
+            return View(vm);
         }
     }
 }

@@ -5,7 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Hosting;
+using System.Web.Mvc;
 using System.Web.Routing;
+using System.Web.UI.WebControls;
 using System.Xml.Linq;
 
 namespace Semprini.Mattia._5i.XMLReadWrite
@@ -13,6 +15,7 @@ namespace Semprini.Mattia._5i.XMLReadWrite
     [HandleError(View = "ErrorePersonalizzato")]
     public class Persona
     {
+        public int ID { get; set; }
         public XElement XML { get; set; }
         public string Nome { get; set; }
         public string Cognome { get; set; }
@@ -40,7 +43,7 @@ namespace Semprini.Mattia._5i.XMLReadWrite
     {
         public XElement XML { get; set; }
 
-        [Required]
+        
         public List<Persona> Persons { get; set; }
         
 

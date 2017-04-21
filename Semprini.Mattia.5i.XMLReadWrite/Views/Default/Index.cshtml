@@ -4,12 +4,13 @@
 
 @{
     ViewBag.Title = "View";
-    
+    int i = 0;
 }
-@using (Html.BeginForm("NewData", "Default", FormMethod.Post))
+
+@using (Html.BeginForm("NewData", "Default"))
 {
 
-   <form action="/Default/NewData/1" method="post">
+   <form>
         <table class="table" border="1">
             <tr>
                 <th>
@@ -26,33 +27,32 @@
                 </th>
 
             </tr>
-
+           
             @foreach (var item in Model.Persons)
             {
-
+                item.ID = i;
                 <tr>
                     <td>
-                        @Html.TextBoxFor(modelItem => item.Nome)
+                        @Html.TextBoxFor(modelItem => item.Nome, new { htmlAttributes = new { @class = "form-control" } })
                     </td>
                     <td>
-                        @Html.TextBoxFor(modelItem => item.Cognome)
+                        @Html.TextBoxFor(modelItem => item.Cognome, new { htmlAttributes = new { @class = "form-control"} })
                     </td>
                     <td>
-                        @Html.TextBoxFor(modelItem => item.Indirizzo)
+                        @Html.TextBoxFor(modelItem => item.Indirizzo, new { htmlAttributes = new { @class = "form-control"} })
                     </td>
                     <td>
-                        @Html.TextBoxFor(modelItem => item.Numero)
+                        @Html.TextBoxFor(modelItem => item.Numero, new { htmlAttributes = new { @class = "form-control"} })
 
+                    </td>
+                    <td colspan="4">
+                        @Html.ActionLink("Edit", "NewData") 
                     </td>
                 </tr>
-
-
+            i++;
+                
             }
-            <tr>
-                <td colspan="4">
-                    <button type="submit">Aggiorna Dati</button>
-                </td>
-            </tr>
+           
 
         </table>
         </form>
